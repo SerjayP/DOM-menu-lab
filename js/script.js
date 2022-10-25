@@ -28,13 +28,13 @@ var menuLinks = [
   },
 ];
 
-const mainEl = document.querySelector('main');
+const mainEl = document.querySelector("main");
 
-mainEl.style.backgroundColor = '#4a4e4d';
+mainEl.style.backgroundColor = "#4a4e4d";
 
-mainEl.innerHTML = '<h1> SEI Rocks! </h1>';
+mainEl.innerHTML = "<h1> SEI Rocks! </h1>";
 
-mainEl.classList.toggle("flex-ctr");
+mainEl.classList.add("flex-ctr");
 
 const topMenuEl = document.getElementById("top-menu");
 
@@ -57,7 +57,7 @@ subMenuEl.style.height = "100%";
 
 subMenuEl.style.backgroundColor = "var(--sub-menu-bg)";
 
-subMenuEl.classList.toggle("flex-around");
+subMenuEl.classList.add("flex-around");
 
 subMenuEl.style.position = "absolute";
 
@@ -76,7 +76,7 @@ topMenuEl.addEventListener("click", (evt) => {
   }
   //  5.3
   if (evt.target.classList.contains("active")) {
-    evt.target.remove("active");
+    evt.target.classList.remove("active");
     showingSubMenu = false;
     subMenuEl.style.top = "0";
     return;
@@ -113,7 +113,7 @@ topMenuEl.addEventListener("click", (evt) => {
 // 5.8
   function buildSubMenu() {
     subMenuEl.innerHTML = "";
-    // console.log(subMenuEl);
+    console.log(subMenuEl);
     currentLink.subLinks.forEach((link) => {
       let a = document.createElement("A");
       a.setAttribute("href", link.href);
